@@ -9,7 +9,7 @@ const {
   registerValidation,
   loginValidation,
 // eslint-disable-next-line import/no-unresolved, import/extensions
-} = require('../middleware/validation');
+} = require('../middlewares/validations');
 
 routes.post('/signup', registerValidation, registration);
 routes.post('/signin', loginValidation, login);

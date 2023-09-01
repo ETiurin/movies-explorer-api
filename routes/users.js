@@ -4,7 +4,7 @@ const {
   getUserInfo,
 } = require('../controllers/users');
 // eslint-disable-next-line import/no-unresolved, import/extensions
-const { createUserValidation } = require('../middleware/validation');
+const { createUserValidation } = require('../middlewares/validations');
 
 userRoutes.get('/me', getUserInfo);
 userRoutes.patch('/me', createUserValidation, createUser);

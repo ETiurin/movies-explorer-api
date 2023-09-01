@@ -5,7 +5,7 @@ const {
   saveMovie,
 } = require('../controllers/movies');
 // eslint-disable-next-line import/no-unresolved, import/extensions
-const { saveMovieValidation, deleteMovieValidation } = require('../middleware/validation');
+const { saveMovieValidation, deleteMovieValidation } = require('../middlewares/validations');
 
 moviesRoutes.get('/', getMovies);
 moviesRoutes.post('/', saveMovieValidation, saveMovie);
