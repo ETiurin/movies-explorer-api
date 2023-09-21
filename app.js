@@ -6,10 +6,7 @@ const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const rateLimit = require('express-rate-limit');
 const allowedCors = require('cors');
-const { loginValidation, registerValidation } = require('./middlewares/validations');
-const auth = require('./middlewares/auth');
-const NotFoundError = require('./errors/NotFoundError');
-const { login, registration } = require('./controllers/users');
+
 const errorHandler = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
