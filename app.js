@@ -41,7 +41,7 @@ app.get('/crash-test', () => {
 
 app.use(requestLogger);
 
-app.use('/users', auth, Route);
+app.use('/', auth, Route);
 app.post('/signup', registerValidation, registration);
 app.post('/signin', loginValidation, login);
 
