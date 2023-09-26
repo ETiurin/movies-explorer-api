@@ -7,7 +7,7 @@ const NotFoundError = require('../errors/NotFoundError');
 
 routes.use('/users', auth, userRoutes);
 routes.use('/movies', auth, moviesRoutes);
-routes.use('*', auth, (_req, _res, next) => {
+routes.use('*', (_req, _res, next) => {
   next(new NotFoundError('Страница не найдена'));
 });
 

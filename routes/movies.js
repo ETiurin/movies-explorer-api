@@ -4,11 +4,12 @@ const {
   deleteMovie,
   saveMovie,
 } = require('../controllers/movies');
+const auth = require('../middlewares/auth');
 // eslint-disable-next-line import/no-unresolved, import/extensions
 const { saveMovieValidation, deleteMovieValidation } = require('../middlewares/validations');
 
-moviesRoutes.get('/', getMovies);
-moviesRoutes.post('/', saveMovieValidation, saveMovie);
-moviesRoutes.delete('/:_id', deleteMovieValidation, deleteMovie);
+moviesRoutes.get('/', auth, getMovies);
+moviesRoutes.post('/', auth, saveMovieValidation, saveMovie);
+moviesRoutes.delete('/:_id', auth, deleteMovieValidation, deleteMovie);
 
 module.exports = moviesRoutes;
