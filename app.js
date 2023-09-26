@@ -53,4 +53,6 @@ app.use('*', (req, res, next) => {
 app.use(errors());
 app.use(errorHandler);
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`server is running on port ${PORT}`);
+});
